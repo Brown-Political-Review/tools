@@ -1,0 +1,169 @@
+div {
+  box-sizing: border-box;
+}
+
+body {
+  /*background-color: #dddde5;*/
+  margin: 0;
+}
+
+a {
+  color: #6f6f6f;
+}
+
+[class*="col-"] {
+    width: 100%;
+}
+@media only screen and (min-width: 992px) {
+    /* For desktop: */
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+    .column1 {
+      float: left;
+      margin: 2;
+      width: 50%;
+    }
+
+    .column2 {
+      float: left;
+      margin: 2;
+      width: 48%;
+    }
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.site-title {
+  background-color: #000;
+  height: auto;
+  width: 100%;
+
+}
+
+.site-title a {
+  font-size: 1.5em;
+  color: #fff;
+  font-family: Oswald, sans-serif;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.content {
+  width: 80%;
+  font-family: "Open Sans";
+}
+
+@media only screen and (min-width: 2px)
+{
+  .content {
+    margin-right: 10%;
+    margin-left: 10%;
+    margin-bottom: 3em;
+  }
+}
+
+.header {
+  height: 15em;
+  display: table;
+  position: relative;
+  width: 100%;
+  margin-bottom: 2em;
+}
+
+.header-image {
+  background-color: #cd3d29;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.app-title {
+  display: table-cell;
+  vertical-align: middle;
+  position: relative;
+  width: 100%;
+}
+
+.app-title a {
+  font-size: 3em;
+  color: #111;
+  font-family: Oswald, sans-serif;
+  text-decoration: none;
+}
+
+.page-title {
+  font-size: 1.75em;
+  font-weight: bold;
+  padding-bottom: .23em;
+}
+
+.page-subtitle {
+  font-size: 1.5em;
+  font-weight: bold;
+  padding-bottom: 0.1em;
+  padding-top: 0.1em;
+}
+
+.section-begin {
+  padding-top: 1em;
+  font-weight: bolder;
+}
+
+.section {
+  margin-left: 2%;
+}
+
+.new_leg,
+.old_leg a {
+  color: #6F6F6F;
+}
+
+.legislation {
+  color: #6f6f6f;
+}
+
+.bill {
+  margin-bottom: 1em;
+}
+
+#email-address {
+  color: #6f6f6f;
+}
+
+@media only screen and (min-width: 992px) {
+  #senate_map,
+  #house_map {
+    height: 70%;
+  }
+}
+
+@media only screen and (min-width: 300px) {
+  #senate_map,
+  #house_map {
+    height: 40%;
+  }
+}
+
+@media only screen and (min-width: 0px) {
+  #senate_map,
+  #house_map {
+    height: 40%;
+  }
+}
