@@ -1,0 +1,19 @@
+{
+  "name": "tools",
+  "version": "1.0.0",
+  "description": "BPR tool database",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Brown-Political-Review/tools.git"
+  },
+  "author": "Matthew Dudak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Brown-Political-Review/tools/issues"
+  },
+  "homepage": "https://github.com/Brown-Political-Review/tools#readme"
+}
