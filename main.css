@@ -60,6 +60,7 @@ a {
   font-family: Oswald, sans-serif;
   text-transform: uppercase;
   text-decoration: none;
+  clear: both;
 }
 
 .content {
@@ -81,7 +82,6 @@ a {
   display: table;
   position: relative;
   width: 100%;
-  margin-bottom: 2em;
 }
 
 .header-image {
@@ -121,49 +121,47 @@ a {
   padding-top: 0.1em;
 }
 
-.section-begin {
-  padding-top: 1em;
-  font-weight: bolder;
-}
-
-.section {
-  margin-left: 2%;
-}
-
-.new_leg,
-.old_leg a {
-  color: #6F6F6F;
-}
-
-.legislation {
-  color: #6f6f6f;
-}
-
-.bill {
+.menu  {
+  background-color: #000;
+  width: 100%;
+  float: left;
+  clear: both;
   margin-bottom: 1em;
 }
 
-#email-address {
-  color: #6f6f6f;
+.menu-entry a {
+  font-size: 1.5em;
+  color: #fff;
+  font-family: Oswald, sans-serif;
+  text-decoration: none;
+  padding-left: 2em;
+  float: left;
 }
 
-@media only screen and (min-width: 992px) {
-  #senate_map,
-  #house_map {
-    height: 70%;
-  }
+.taglist {
+  padding-bottom: 2em;
 }
 
-@media only screen and (min-width: 300px) {
-  #senate_map,
-  #house_map {
-    height: 40%;
-  }
+.tag-wrapper {
+  display: inline-block;
+  float: left;
+  padding: 1%;
 }
 
-@media only screen and (min-width: 0px) {
-  #senate_map,
-  #house_map {
-    height: 40%;
-  }
+.tag {
+  background-color: #DFE6E5;
+  height: 2em;
+  vertical-align: middle;
+  display: table-cell;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.activated-tag {
+  background-color: #ffa053;
+}
+
+.tool {
+  clear: left;
+  float: none;
 }

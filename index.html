@@ -20,4 +20,29 @@
     </div>
   </div>
 
+  <div class="menu">
+    <div class="menu-entry">
+      <a href="submit">Submit</a>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="taglist">
+      <div ng-repeat="tag in tags">
+        <div class="tag-wrapper">
+          <div ng-click="toggleTag(tag)" ng-class="{'activated-tag': tag.clicked}" class="tag">
+            {{tag.tag}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class=""
+    <div ng-repeat="tool in tools">
+      <div ng-show="tagActivated(tool)" class="tool">
+        {{tool.title}} - <b ng-repeat="tag in tool.tags">{{tag}} </b>
+      </div>
+    </div>
+  </div>
+
 </body>
