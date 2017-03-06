@@ -5,13 +5,13 @@ var morgan = require('morgan');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 
-//Set up mongoose
+/*//Set up mongoose
 mongoose.connect('localhost');
 var Tool = mongoose.model('Tool', {
   name: String,
   tags: Array,
   description: String
-})
+})*/
 
 //Set up express
 app.use(express.static(__dirname + '/public'));
@@ -24,7 +24,7 @@ app.use(methodOverride());
 
 //Create our api routes
 
-//First the route to get all tools
+/*//First the route to get all tools
 app.get('/api/tools', function(req, res) {
   //Look in the database for all tools
   Tool.find(function(err, tools) {
@@ -53,6 +53,6 @@ app.post('/api/tools', function(req, res) {
     });
   });
 });
-
+*/
 //Listen and start app
 app.listen(80);
