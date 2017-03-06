@@ -9,7 +9,7 @@ var methodOverride = require('method-override');
 app.set('port', (process.env.PORT || 5000));
 
 //Set up the uri for mongolab
-var uristring = process.env.MONGOLAB_URI;
+var uristring = process.env.MONGODB_URI;
 
 //Set up mongoose
 mongoose.connect('localhost');
