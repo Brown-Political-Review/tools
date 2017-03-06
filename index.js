@@ -12,7 +12,7 @@ app.set('port', (process.env.PORT || 5000));
 var uristring = process.env.MONGODB_URI;
 
 //Set up mongoose
-mongoose.connect('localhost');
+mongoose.connect(uristring);
 var Tool = mongoose.model('Tool', {
   name: String,
   tags: Array,
