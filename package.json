@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/Brown-Political-Review/tools/issues"
   },
-  "homepage": "https://github.com/Brown-Political-Review/tools#readme"
+  "homepage": "https://github.com/Brown-Political-Review/tools#readme",
+  "dependencies": {
+    "body-parser": "^1.17.0",
+    "express": "^4.15.0",
+    "method-override": "^2.3.7",
+    "mongoose": "^4.8.5",
+    "morgan": "^1.8.1"
+  }
 }
