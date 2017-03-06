@@ -5,6 +5,10 @@ var morgan = require('morgan');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 
+//Set up the port
+app.set('port', (process.env.PORT || 5000));
+
+
 /*//Set up mongoose
 mongoose.connect('localhost');
 var Tool = mongoose.model('Tool', {
@@ -55,4 +59,6 @@ app.post('/api/tools', function(req, res) {
 });
 */
 //Listen and start app
-app.listen(80);
+app.listen(app.get('port'), function(){
+  console.log("node is running on port", app.get('port'));
+});
