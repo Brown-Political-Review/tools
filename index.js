@@ -8,14 +8,16 @@ var methodOverride = require('method-override');
 //Set up the port
 app.set('port', (process.env.PORT || 5000));
 
+//Set up the uri for mongolab
+var uristring = process.env.MONGOLAB_URI;
 
-/*//Set up mongoose
+//Set up mongoose
 mongoose.connect('localhost');
 var Tool = mongoose.model('Tool', {
   name: String,
   tags: Array,
   description: String
-})*/
+})
 
 //Set up express
 app.use(express.static(__dirname + '/public'));
@@ -28,7 +30,7 @@ app.use(methodOverride());
 
 //Create our api routes
 
-/*//First the route to get all tools
+//First the route to get all tools
 app.get('/api/tools', function(req, res) {
   //Look in the database for all tools
   Tool.find(function(err, tools) {
@@ -57,7 +59,7 @@ app.post('/api/tools', function(req, res) {
     });
   });
 });
-*/
+
 //Listen and start app
 app.listen(app.get('port'), function(){
   console.log("node is running on port", app.get('port'));
