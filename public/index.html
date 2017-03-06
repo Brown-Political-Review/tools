@@ -1,0 +1,50 @@
+<head>
+  <title>BPR Toolbox</title>
+  <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+  <link href="main.css" rel="stylesheet">
+  <link rel="shortcut icon" href="http://www.brownpoliticalreview.org/wp-content/uploads/2016/03/Favicon_sm.png">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+  <script src="app.js"></script>
+</head>
+
+<body ng-app="tools" ng-controller="MainCtrl">
+  <div class="site-title" align="center">
+    <a href="http://brownpoliticalreview.org/">Brown Political Review</a>
+  </div>
+
+  <div class="header">
+    <div class="header-image">
+    </div>
+    <div class="app-title" align="center">
+      <a href="index.html">BPR Data Toolbox</a>
+    </div>
+  </div>
+
+  <div class="menu">
+    <div class="menu-entry">
+      <a href="submit">Submit</a>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="taglist">
+      <div ng-repeat="tag in tags">
+        <div class="tag-wrapper">
+          <div ng-click="toggleTag(tag)" ng-class="{'activated-tag': tag.clicked}" class="tag">
+            {{tag.tag}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-container">
+      <div ng-repeat="tool in tools">
+        <div class="card-wrapper">
+          <div ng-show="tagActivated(tool)" class="card">
+            <div class="tool">{{tool.title}} - <b ng-repeat="tag in tool.tags">{{tag}} </b></div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+</body>

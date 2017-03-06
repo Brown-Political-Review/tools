@@ -1,0 +1,168 @@
+div {
+  box-sizing: border-box;
+}
+
+body {
+  /*background-color: #dddde5;*/
+  margin: 0;
+}
+
+a {
+  color: #6f6f6f;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.site-title {
+  background-color: #000;
+  height: auto;
+  width: 100%;
+
+}
+
+.site-title a {
+  font-size: 1.5em;
+  color: #fff;
+  font-family: Oswald, sans-serif;
+  text-transform: uppercase;
+  text-decoration: none;
+  clear: both;
+}
+
+.content {
+  width: 80%;
+  font-family: "Open Sans";
+}
+
+@media only screen and (min-width: 2px)
+{
+  .content {
+    margin-right: 10%;
+    margin-left: 10%;
+    margin-bottom: 3em;
+  }
+}
+
+.header {
+  height: 15em;
+  display: table;
+  position: relative;
+  width: 100%;
+}
+
+.header-image {
+  background-color: #cd3d29;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.app-title {
+  display: table-cell;
+  vertical-align: middle;
+  position: relative;
+  width: 100%;
+}
+
+.app-title a {
+  font-size: 3em;
+  color: #111;
+  font-family: Oswald, sans-serif;
+  text-decoration: none;
+}
+
+.page-title {
+  font-size: 1.75em;
+  font-weight: bold;
+  padding-bottom: .23em;
+}
+
+.page-subtitle {
+  font-size: 1.5em;
+  font-weight: bold;
+  padding-bottom: 0.1em;
+  padding-top: 0.1em;
+}
+
+.menu  {
+  background-color: #000;
+  width: 100%;
+  float: left;
+  clear: both;
+  margin-bottom: 1em;
+}
+
+.menu-entry a {
+  font-size: 1.5em;
+  color: #fff;
+  font-family: Oswald, sans-serif;
+  text-decoration: none;
+  padding-right: 2em;
+  margin-left: 10%;
+  float: left;
+}
+
+.taglist {
+  padding-bottom: 2em;
+}
+
+.tag-wrapper {
+  display: inline-block;
+  float: left;
+  padding: 1%;
+}
+
+.tag {
+  background-color: #DFE6E5;
+  height: 2em;
+  vertical-align: middle;
+  display: table-cell;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.activated-tag {
+  background-color: #ffa053;
+}
+
+.card-container {
+  clear: both;
+}
+
+@media only screen and (min-width: 1000px) {
+    /* For desktop: */
+    .card {width: 31.33%;}
+}
+
+@media only screen and (min-width: 800px) and (max-width: 999.99999px) {
+  .card {width: 47%}
+}
+
+@media only screen and (min-width: 2px) and (max-width: 799.99999px) {
+  .card {width: 100%}
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  margin: 1%;
+  float: left;
+  height: 20em;
+  padding: 2%;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+
+.tool {
+  padding: 1px;
+}
