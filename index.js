@@ -55,4 +55,4 @@ app.post('/api/tools', function(req, res) {
 });
 
 //Listen and start app
-app.listen(8080);
+app.listen(80);
