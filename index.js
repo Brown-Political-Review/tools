@@ -16,7 +16,9 @@ mongoose.connect(uristring);
 var Tool = mongoose.model('Tool', {
   name: String,
   tags: Array,
-  description: String
+  description: String,
+  url: String,
+  resources: String
 })
 
 //Set up express
@@ -42,9 +44,13 @@ app.get('/api/tools', function(req, res) {
 });
 
 app.post('/api/tools', function(req, res) {
+  var tags = req.body.tags.split(",");
+  for (i=0; i<tags.length; i++) {
+    tags[i] = tags[i].replace(/^\s+|\s+$/g, "");
+  }
   Tool.create({
     name: req.body.name,
-    tags: req.body.tags,
+    tags: tags,
     description: req.body.description
   }, function(err, tool) {
     if (err) {
