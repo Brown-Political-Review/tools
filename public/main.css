@@ -1,4 +1,4 @@
-div {
+cd div {
   box-sizing: border-box;
 }
 
@@ -137,8 +137,7 @@ a {
 }
 
 @media only screen and (min-width: 1000px) {
-    /* For desktop: */
-    .card {width: 31.33%;}
+    .card {width: 27.33%;}
 }
 
 @media only screen and (min-width: 800px) and (max-width: 999.99999px) {
@@ -152,9 +151,9 @@ a {
 .card {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
-  margin: 1%;
+  margin: 0.5em;
   float: left;
-  height: 20em;
+  min-height: 15em;
   padding: 2%;
 }
 
@@ -164,5 +163,27 @@ a {
 
 
 .tool {
-  padding: 1px;
+  padding-bottom: 1.5em;
+}
+
+.description {
+  padding-bottom: 1.5em;
+}
+
+.card-tag {
+  padding-left: 0.5em;
+  float: left;
+}
+
+.word-input {
+  width: 40em;
+  padding-bottom: 1.5em;
+}
+
+.long-input {
+  width: 100%;
+  padding-bottom: 1.5em;
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
 }

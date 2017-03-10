@@ -1,0 +1,36 @@
+  <div class="menu">
+    <div class="menu-entry">
+      <a href="#/">Home</a>
+    </div>
+  </div>
+
+  <div class="content">
+    <form>
+      Name:
+      <div class="word-input">
+        <input type="text" placeholder="Tool name" ng-model="formData.name">
+      </div>
+      URL:
+      <div class="word-input">
+        <input type="url" placeholder="Tool URL" ng-model="formData.url">
+      </div>
+      Description:
+      <div class="long-input">
+        <textarea rows="5" cols="50" ng-model="formData.description">
+          Place your description here.
+        </textarea>
+      </div>
+      Tags:
+      <div class="word-input">
+        <input type="text" placeholder="Tags" ng-model="formData.tags">
+      </div>
+      Resources:
+      <div class="long-input">
+        <textarea rows="5" cols="50" ng-model="formData.resources">
+          Tool resources
+        </textarea>
+      </div>
+
+      <button type="submit" ng-click="createTool()">Submit</button>
+    </form>
+  </div>

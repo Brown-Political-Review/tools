@@ -9,7 +9,7 @@ var methodOverride = require('method-override');
 app.set('port', (process.env.PORT || 5000));
 
 //Set up the uri for mongolab
-var uristring = process.env.MONGODB_URI;
+var uristring = process.env.MONGODB_URI || 'localhost';
 
 //Set up mongoose
 mongoose.connect(uristring);
@@ -35,7 +35,9 @@ app.use(methodOverride());
 //First the route to get all tools
 app.get('/api/tools', function(req, res) {
   //Look in the database for all tools
-  Tool.find(function(err, tools) {
+  Tool.find()
+    .sort({title: 1})
+    .exec(function(err, tools) {
     if (err) {
       res.send(err);
     }
@@ -64,6 +66,26 @@ app.post('/api/tools', function(req, res) {
       res.json(tools);
     });
   });
+});
+
+//Api to just get the tools with a particular tag
+app.get('/api/tag/:tag', function(req, res) {
+  var tag = req.params.tag;
+  //Look in the database for all tools with that tag
+  Tool.find({tags: {$in: [tag]}})
+    .sort({title: 1})
+    .exec(function(err, tools) {
+    if (err) {
+      res.send(err);
+    }
+    res.json(tools);
+  });
+});
+
+
+//Set up our front end
+app.get('*', function(req, res){
+  res.sendFile(__dirname + '/public/index.html');
 });
 
 //Listen and start app

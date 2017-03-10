@@ -4,10 +4,12 @@
   <link href="main.css" rel="stylesheet">
   <link rel="shortcut icon" href="http://www.brownpoliticalreview.org/wp-content/uploads/2016/03/Favicon_sm.png">
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="app.js"></script>
 </head>
 
-<body ng-app="tools" ng-controller="MainCtrl">
+<body ng-app="tools">
   <div class="site-title" align="center">
     <a href="http://brownpoliticalreview.org/">Brown Political Review</a>
   </div>
@@ -16,35 +18,38 @@
     <div class="header-image">
     </div>
     <div class="app-title" align="center">
-      <a href="index.html">BPR Data Toolbox</a>
+      <a href="#/">BPR Data Toolbox</a>
     </div>
   </div>
-
-  <div class="menu">
-    <div class="menu-entry">
-      <a href="submit">Submit</a>
-    </div>
-  </div>
-
-  <div class="content">
-    <div class="taglist">
-      <div ng-repeat="tag in tags">
-        <div class="tag-wrapper">
-          <div ng-click="toggleTag(tag)" ng-class="{'activated-tag': tag.clicked}" class="tag">
-            {{tag.tag}}
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="card-container">
-      <div ng-repeat="tool in tools">
-        <div class="card-wrapper">
-          <div ng-show="tagActivated(tool)" class="card">
-            <div class="tool">{{tool.title}} - <b ng-repeat="tag in tool.tags">{{tag}} </b></div>
-          </div>
-        </div>
-      </div>
-  </div>
-
+  <ng-view></ng-view>
+  <script type="text/javascript">
+  	function sameHeights(selector) {
+  	    var selector = selector || '[data-key="sameHeights"]',
+  	        query = document.querySelectorAll(selector),
+  	        elements = query.length,
+  	        max = 0;
+  	    if (elements) {
+  	        while (elements--) {
+  	            var element = query[elements];
+  	            if (element.clientHeight > max) {
+  	                max = element.clientHeight;
+  	            }
+                console.log(max)
+  	        }
+  	        elements = query.length;
+  	        while (elements--) {
+  	            var element = query[elements];
+  	            element.style.height = max + 'px';
+  	        }
+  	    }
+  	}
+    if ('addEventListener' in window) {
+  	    window.addEventListener('resize', function(){
+  	        sameHeights();
+  	    });
+  	    window.addEventListener('load', function(){
+  	        sameHeights();
+  	    });
+  	}
+  </script>
 </body>

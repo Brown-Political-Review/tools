@@ -1,0 +1,32 @@
+  <div class="menu">
+    <div class="menu-entry">
+      <a href="#submit">Submit</a>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="taglist" ng-show="{{taglist}}">
+      <div ng-repeat="tag in tags | orderBy:'tag'">
+        <div class="tag-wrapper">
+          <div ng-click="toggleTag(tag)" ng-class="{'activated-tag': tag.clicked}" class="tag">
+            {{tag.tag}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-container sameHeights">
+      <div ng-repeat="tool in tools">
+        <div class="card-wrapper">
+          <div ng-show="tagActivated(tool)" class="card" data-key="sameHeights">
+            <div class="tool"><a ng-href="{{tool.url}}">{{tool.name}}</a></div>
+            <div class="description">{{tool.description}}</div>
+            <div class="card-tag" style="padding-left:0;"><b>Tags:</b></div>
+              <div ng-repeat="tag in tool.tags | orderBy: tag" class="card-tag">
+                {{tag}}
+              </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
