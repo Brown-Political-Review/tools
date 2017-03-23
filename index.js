@@ -53,7 +53,9 @@ app.post('/api/tools', function(req, res) {
   Tool.create({
     name: req.body.name,
     tags: tags,
-    description: req.body.description
+    description: req.body.description,
+    resources: req.body.resources,
+    url: req.body.url
   }, function(err, tool) {
     if (err) {
       res.send(err);

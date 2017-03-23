@@ -2,6 +2,12 @@
     <div class="menu-entry">
       <a href="#submit">Submit</a>
     </div>
+    <!--<div class="menu-entry" style="float: right;">
+      Search
+    <div>-->
+    <div class="menu-entry" style="float: right;">
+      <input type="text">
+    </div>
   </div>
 
   <div class="content">
@@ -15,15 +21,17 @@
       </div>
     </div>
 
-    <div class="card-container sameHeights">
+    <div class="card-container">
       <div ng-repeat="tool in tools">
-        <div class="card-wrapper">
-          <div ng-show="tagActivated(tool)" class="card" data-key="sameHeights">
+        <div ng-show="tagActivated(tool)" class="card">
+          <div class="card-wrapper">
             <div class="tool"><a ng-href="{{tool.url}}">{{tool.name}}</a></div>
             <div class="description">{{tool.description}}</div>
+            <div class="resources"><b>Resources:</b></div>
+            <div class="resources" style="padding-bottom: 1em;"><div ng-bind-html="tool.resources | linky"></div></div>
             <div class="card-tag" style="padding-left:0;"><b>Tags:</b></div>
               <div ng-repeat="tag in tool.tags | orderBy: tag" class="card-tag">
-                {{tag}}
+                <a ng-href="#tag/{{tag}}">{{tag}}</a>
               </div>
           </div>
         </div>

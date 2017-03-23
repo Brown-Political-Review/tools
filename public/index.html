@@ -5,7 +5,7 @@
   <link rel="shortcut icon" href="http://www.brownpoliticalreview.org/wp-content/uploads/2016/03/Favicon_sm.png">
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-sanitize.js"></script>
   <script src="app.js"></script>
 </head>
 
@@ -24,31 +24,34 @@
   <ng-view></ng-view>
   <script type="text/javascript">
   	function sameHeights(selector) {
-  	    var selector = selector || '[data-key="sameHeights"]',
+  	    var selector = selector || '.card',
   	        query = document.querySelectorAll(selector),
   	        elements = query.length,
   	        max = 0;
   	    if (elements) {
+            elements = query.length;
   	        while (elements--) {
-  	            var element = query[elements];
-  	            if (element.clientHeight > max) {
-  	                max = element.clientHeight;
+  	            var element = query[elements].querySelector('.card-wrapper');
+                element.style['min-height'] = 0;
+  	            if (element.scrollHeight > max) {
+                    if (!(element.className.includes('ng-hide'))){
+  	                   max = element.scrollHeight;
+                    }
   	            }
-                console.log(max)
   	        }
   	        elements = query.length;
   	        while (elements--) {
   	            var element = query[elements];
-  	            element.style.height = max + 'px';
+  	            element.style['min-height'] = max + 'px';
   	        }
   	    }
   	}
     if ('addEventListener' in window) {
   	    window.addEventListener('resize', function(){
-  	        sameHeights();
+  	        sameHeights('.card');
   	    });
   	    window.addEventListener('load', function(){
-  	        sameHeights();
+  	        setTimeout(sameHeights, 300);
   	    });
   	}
   </script>

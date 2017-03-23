@@ -1,8 +1,7 @@
 //Set up the angular app
-var app = angular.module("tools", ['ngRoute']);
+var app = angular.module("tools", ['ngRoute', 'ngSanitize']);
 
 app.config(function($routeProvider) {
-  console.log($routeProvider)
   $routeProvider
     .when("/submit", {
       templateUrl: "submit.html",
@@ -11,6 +10,10 @@ app.config(function($routeProvider) {
     .when("/", {
       templateUrl: "main.html",
       controller: "MainCtrl"
+    })
+    .when("/tag/:tag", {
+      templateUrl: "main.html",
+      controller: "TagCtrl"
     })
 })
 
@@ -49,7 +52,22 @@ app.controller('MainCtrl', function($scope, $http){
     }
     $scope.toggleTag = function(tag) {
       tag.clicked = !tag.clicked;
+      setTimeout(sameHeights, 10);
     }
+  }
+);
+
+app.controller('TagCtrl', function($scope, $http, $routeParams){
+    $scope.taglist = true;
+    $http.get('/api/tag/' + $routeParams.tag)
+      .success(function(data) {
+        $scope.tools = data;
+        $scope.tags = [{"tag": $routeParams.tag, "clicked": true}];
+      })
+      .error(function(data) {
+        console.log('Error' + data)
+      });
+    $scope.tagActivated = function(){ return true};
   }
 );
 
