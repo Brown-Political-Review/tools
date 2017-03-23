@@ -133,6 +133,12 @@ a {
   background-color: #ffa053;
 }
 
+.search {
+  float: none;
+  clear: both;
+  padding: 1%;
+}
+
 .card-container {
   clear: both;
 }

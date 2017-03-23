@@ -2,12 +2,6 @@
     <div class="menu-entry">
       <a href="#submit">Submit</a>
     </div>
-    <!--<div class="menu-entry" style="float: right;">
-      Search
-    <div>-->
-    <div class="menu-entry" style="float: right;">
-      <input type="text">
-    </div>
   </div>
 
   <div class="content">
@@ -20,9 +14,12 @@
         </div>
       </div>
     </div>
+    <div class="search">
+      Search: <input type="text" ng-model="searchKeyword">
+    </div>
 
     <div class="card-container">
-      <div ng-repeat="tool in tools">
+      <div ng-repeat="tool in tools | filter:searchKeyword">
         <div ng-show="tagActivated(tool)" class="card">
           <div class="card-wrapper">
             <div class="tool"><a ng-href="{{tool.url}}">{{tool.name}}</a></div>
