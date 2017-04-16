@@ -56,11 +56,13 @@ app.controller('MainCtrl', function($scope, $http){
     }
     $scope.turnAllTagsOff = function() {
       for (i=0; i<$scope.tags.length; i++) {
+        console.log(tag)
         tag.clicked = false;
       }
     }
     $scope.turnAllTagsOn = function() {
       for (i=0; i<$scope.tags.length; i++) {
+        console.log(tag)
         tag.clicked = true;
       }
     }
