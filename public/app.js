@@ -54,6 +54,16 @@ app.controller('MainCtrl', function($scope, $http){
       tag.clicked = !tag.clicked;
       setTimeout(sameHeights, 10);
     }
+    $scope.turnAllTagsOff = function() {
+      for (i=0; i<$scope.tags.length; i++) {
+        tag.clicked = false;
+      }
+    }
+    $scope.turnAllTagsOn = function() {
+      for (i=0; i<$scope.tags.length; i++) {
+        tag.clicked = true;
+      }
+    }
   }
 );
 
